@@ -53,6 +53,19 @@ cascode放大器 增益及相位
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/OPA.JPG)
 
+## LAB5
+
+設計放大器+運用在閉環
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB5/wv.JPG)
+
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB5/width.JPG)
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB5/table.JPG)
+
+
+
 
 
 
