@@ -1,2 +1,0 @@
-在SS corner下，找尋29uA~31uA電流下之W/L，得2.6
-在body effect下，Vth、gm、id都很不穩定，要盡量避免
