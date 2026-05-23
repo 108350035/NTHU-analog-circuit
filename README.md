@@ -34,19 +34,19 @@ cascode放大器 增益及相位
 
 ## LAB4
 
-單位增益OPA
+理想單位增益OPA
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/1/OPA.JPG)
 
-非反相輸入OPA
+理想非反相輸入OPA
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/2/OPA.JPG)
 
-反相輸入OPA
+理想反相輸入OPA
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/3/OPA.JPG)
 
-積分器+加法氣
+理想積分器+理想加法器
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/schematic.JPG)
 
