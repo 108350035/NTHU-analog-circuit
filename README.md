@@ -64,6 +64,12 @@ cascode放大器 增益及相位
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB5/table.JPG)
 
+## LAB6
+2 stage opamp + CMFB 
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB6/tran.JPG)
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB6/table.JPG)
 
 
 
