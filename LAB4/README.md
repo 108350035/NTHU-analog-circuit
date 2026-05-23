@@ -1,2 +1,3 @@
-# NTHU-analog-circuit
-清大類比電路課程 自學
+# 1
+
+A0=1000，Av=0.999。 Ri=10^17k Ro=0 
