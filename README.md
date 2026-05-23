@@ -71,6 +71,14 @@ cascode放大器 增益及相位
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB6/table.JPG)
 
+## Final
+
+bandgap + ADC
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/Final/1/BGV.JPG)
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/Final/2/table.JPG)
+
 
 
 
