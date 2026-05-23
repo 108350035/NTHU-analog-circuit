@@ -1,0 +1,25 @@
+使用PNP_V100X100模型並假設m=12以及三條電流皆為1.6uA
+得R1=25.875mV*ln12/1.6uA=40k VEB1=VEB3=0.64V VEB2=0.577V R2/R1=8.5 
+結合理想OP後的模擬 得 R2/R1=10.3 以及(W/L)p=40u/5u下 TC符合spec
+預估Vref=0.64+1.707u*40k*10.3=1.34V P=9.27uW
+
+PSR=delta_Vo/delta_VDD=(gm*R2)/(1+gm*R1*A0) 其中A0是op之增益
+降低R1會造成power變大，所以只能針對A0。
+為了讓PSR<0.01 A0至少要大於1030
+
+讓Iout=Iref=1uA K=4 算出Rs=71.2k
+由於channel length modulation，使電流不符合預期
+若設計Rs越大，電流會越小造成Vb越小，M3會關閉
+得出Rs=58k Iout=Iref=1.9uA Vbias=0.54V
+start-up電路下M7的驅動能力要大於M6，否則電路進入永遠不工作的穩態
+由於功耗的考量，要使電流小(W/L)4必須小。
+經過tran模擬，在啟動前確認M6放電，啟動後M6永遠關閉，確認設計無誤
+最後得出constant_gm與start_up電路的P=9.07uW
+
+由於在Corner以及溫度不同情況下，Vbias的變化蠻大。
+難以保證OP中的偏壓管在每種情況都能飽和，因此會跑到線性區
+但只要保證其他管處於飽和區，增益就可以很大。
+在設計上L盡量大，電流小。 由於bandgap的三條電流都一樣
+靠著回授可以使OP輸入端接近一樣，但MOS的VSG若小於Vtp，則不成立
+所以OP輸出電壓在設計時要小於1.8-0.47=1.33V
+補償電阻為0.3G 電容為2pF，能使loop gain的PM大於60度，不會讓整個電路震盪。

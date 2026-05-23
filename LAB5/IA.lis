@@ -1,0 +1,270 @@
+ ****** HSPICE -- N-2017.12-SP2 linux64 (May 24 2018) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: IA.sp                                                             
+  Command line options: /home/IC/Synopsys/hspice/N-2017.12-SP2/hspice/linux64/hspice IA.sp -o IA.lis
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.3 
+ lic: USER:   IC                   HOSTNAME: IC 
+ lic: HOSTID: 000c29935feb         PID:      18178 
+ lic: Using FLEXlm license file: 
+ lic: 27000@IC 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 30-dec-2030/2019.2019 
+ lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@IC 
+ lic:   
+  **warning** (IA.sp:21) No analysis statements before the .probe statement, command ignored
+1****** HSPICE -- N-2017.12-SP2 linux64 (May 24 2018) ******                    
+ ******  
+ *lab5
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 x1.                             opa                1.00 
+ 
+
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 6         bypass  = 2.0000    
+  Opening plot unit= 15
+ file=IA.pa0
+
+ **info** dc convergence successful at GMINDC ramping method 
+ ******  
+ *lab5
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:out     = 663.4784m 0:vac     =   0.      0:vbs     = 660.0000m
+ +0:vdd     =   1.8000  0:vin     = 660.0000m 0:vip     = 660.0000m
+ +0:vm      = 660.3162m 0:vss     =   0.      1:m1d     = 303.0486m
+ +1:m2d     = 298.7746m 1:m3d     =   1.0409  1:m5s     =   1.5319 
+ +1:m6s     =   1.5297  1:v1      = 850.0000m 1:v2      = 700.0000m
+ +1:v3      = 500.0000m 1:x       = 134.0451m
+
+
+ maximum nodal capacitance=   4.161E-12         on node     0:vss             
+
+    nodal  capacitance table 
+
+    node    =    cap      node    =    cap      node    =    cap
+
+ +0:out     =   4.0106p 0:vac     =   0.      0:vbs     =   0.     
+ +0:vdd     = 127.8460f 0:vin     =   0.      0:vip     =  29.5917f
+ +0:vm      =  29.6265f 0:vss     =   4.1607p 1:m1d     =  38.6993f
+ +1:m2d     =  38.8380f 1:m3d     =  67.6572f 1:m5s     =  38.7784f
+ +1:m6s     =  38.7387f 1:v1      =  57.9486f 1:v2      =  55.6374f
+ +1:v3      =  60.2180f 1:x       =  81.2128f
+
+ 
+
+ **** voltage sources
+
+ subckt                                               x1         x1        
+ element  0:vac      0:vbs      0:vdd      0:vss      1:v1       1:v2      
+  volts      0.       660.0000m    1.8000     0.       850.0000m  700.0000m
+  current    0.       316.2184p  -18.4088u   18.4085u    0.         0.     
+  power      0.      -208.7041p   33.1358u    0.         0.         0.     
+
+ subckt   x1        
+ element  1:v3      
+  volts    500.0000m
+  current    0.     
+  power      0.     
+
+     total voltage source power dissipation=   33.1356u       watts
+
+
+
+ **** resistors
+
+ subckt                        
+ element  0:r1       0:r2      
+  r value    1.0000x   10.0000x
+  v drop  -316.2184u   -3.1622m
+  current -316.2184p -316.2184p
+  power     99.9941f  999.9405f
+
+
+ **** voltage-controlled voltage sources
+
+
+ subckt                        
+ element  0:ep       0:en      
+  volts      0.         0.     
+  current    0.       316.2184p
+
+
+
+
+
+ **** mosfets
+
+
+ subckt   x1         x1         x1         x1         x1         x1        
+ element  1:mb       1:m1       1:m2       1:m3       1:m4       1:m5      
+ model    0:n_18.1   0:n_18.1   0:n_18.1   0:n_18.1   0:n_18.1   0:p_18.1  
+ region   Saturation Saturation Saturation Saturation Saturation Saturation
+  id        18.4084u    9.1993u    9.2091u    9.1993u    9.2091u   -9.1993u
+  ibs     -3.024e-21  -50.4075a  -50.4075a -113.9588a -112.3517a   62.2211a
+  ibd      -91.0501a -113.9555a -112.3483a -391.4082a -249.4901a  176.1564a
+  vgs      500.0000m  525.9549m  526.2711m  546.9514m  551.2254m -831.8747m
+  vds      134.0451m  169.0035m  164.7295m  737.8355m  364.7038m -490.9906m
+  vbs        0.      -134.0451m -134.0451m -303.0486m -298.7746m  268.1253m
+  vth      389.2050m  418.7598m  418.7945m  445.5476m  448.0774m -570.9982m
+  vdsat    124.7242m  123.8817m  124.0719m  121.9877m  123.1290m -253.1554m
+  vod      110.7950m  107.1951m  107.4766m  101.4039m  103.1480m -260.8765m
+  beta       2.6778m    1.3409m    1.3410m    1.3442m    1.3442m  276.0653u
+  gam eff  507.4460m  511.0714m  511.0714m  515.3176m  515.2141m  555.2525m
+  gm       229.7164u  121.1678u  120.8013u  127.2829u  126.5093u   61.6218u
+  gds       29.1017u    6.3650u    6.9542u    1.5698u    1.9126u  677.8142n
+  gmb       47.0260u   22.8751u   22.8102u   21.6608u   21.7737u   17.1140u
+  cdtot     16.8329f    7.1670f    7.2537f    5.4951f    5.8931f    5.0956f
+  cgtot     60.2180f   29.5917f   29.6265f   28.9340f   29.0145f   27.8497f
+  cstot     65.5523f   32.1892f   32.1907f   31.5323f   31.5843f   31.7801f
+  cbtot     33.8936f   16.0165f   16.0267f   14.4509f   14.8029f   14.5570f
+  cgs       51.3392f   25.5571f   25.5664f   25.1887f   25.2936f   24.5827f
+  cgd        4.5937f    1.8751f    1.9078f    1.4983f    1.5246f    1.5989f
+
+
+
+ subckt   x1         x1         x1        
+ element  1:m6       1:m7       1:m8      
+ model    0:p_18.1   0:p_18.1   0:p_18.1  
+ region   Saturation Saturation Saturation
+  id        -9.2095u   -9.1993u   -9.2095u
+  ibs       62.7247a  1.033e-21  1.034e-21
+  ibd      263.7356a   62.2191a   62.7227a
+  vgs     -829.7045m -759.1159m -759.1159m
+  vds     -866.2261m -268.1253m -270.2955m
+  vbs      270.2955m    0.         0.     
+  vth     -571.5683m -496.2654m -496.2654m
+  vdsat   -250.9736m -247.9712m -247.9712m
+  vod     -258.1362m -262.8505m -262.8505m
+  beta     276.1515u  290.6236u  290.6236u
+  gam eff  555.2386m  557.0846m  557.0846m
+  gm        62.4651u   58.6867u   58.8690u
+  gds      374.8372n    4.7652u    4.5819u
+  gmb       17.3319u   18.2477u   18.2986u
+  cdtot      4.7063f    6.9983f    6.9471f
+  cgtot     27.7876f   28.5408f   28.5257f
+  cstot     31.7917f   32.9407f   32.9402f
+  cbtot     14.2673f   16.5734f   16.5675f
+  cgs       24.5552f   24.6468f   24.6476f
+  cgd        1.5493f    2.1612f    2.1413f
+
+
+
+
+
+
+
+ ****     small-signal transfer characteristics
+
+      v(out)/vac                               =   -9.8087 
+      input resistance at             vac      =  1.000e+20
+      output resistance at v(out)              =   93.2533k
+
+
+
+ ***************************************************
+   ******   pole/zero analysis  
+  
+  
+    input =  0:vac          output = v(out)
+  
+       poles (rad/sec)                 poles ( hertz)
+ real            imag            real            imag            
+ -2.82843x       0.              -450.158k       0.              
+ -49.2730x       0.              -7.84204x       0.              
+ -1.09958g       756.441x        -175.004x       120.391x        
+ -1.09958g       -756.441x       -175.004x       -120.391x       
+ -2.18904g       0.              -348.397x       0.              
+ -3.17846g       0.              -505.867x       0.              
+ -4.20093g       0.              -668.598x       0.              
+ -4.54302g       0.              -723.044x       0.              
+  
+       zeros (rad/sec)                 zeros ( hertz)
+ real            imag            real            imag            
+ -984.595x       1.45357g        -156.703x       231.343x        
+ -984.595x       -1.45357g       -156.703x       -231.343x       
+ -2.17812g       0.              -346.658x       0.              
+ -3.24454g       0.              -516.384x       0.              
+ -4.46271g       0.              -710.263x       0.              
+ 28.0573g        0.              4.46546g        0.              
+  
+  ***** constant factor = 118.550t
+ ******
+ *lab5
+
+ ****** ac analysis tnom=  25.000 temp=  25.000 ******
+ dcgain_in_db=  19.8322     at=   1.0000 
+             from=   1.0000     to= 100.0000g
+ bw= 447.5869k
+
+          ***** job concluded
+ ******  
+ *lab5
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: 13th Gen Intel(R) Core(TM) i5-13600KF
+ cpu MHz	: 3494.401
+  
+ OS:
+ Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     4
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      36 # elements   =      22
+  # resistors   =       2 # capacitors =       2 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       2
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       7
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       9 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1         235
+  ac analysis        0.00         111         111
+  readin             0.01
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        316.06 megabytes
+           total cpu time            0.01 seconds
+           total elapsed time        0.15 seconds
+           job started at     21:24:55 02/13/2026
+           job ended   at     21:24:56 02/13/2026
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.13(s)

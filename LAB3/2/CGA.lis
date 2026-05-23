@@ -1,0 +1,171 @@
+ ****** HSPICE -- N-2017.12-SP2 linux64 (May 24 2018) ******                    
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: CGA.sp                                                            
+  Command line options: /home/IC/Synopsys/hspice/N-2017.12-SP2/hspice/linux64/hspice CGA.sp -o CGA.lis
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.3 
+ lic: USER:   IC                   HOSTNAME: IC 
+ lic: HOSTID: 000c29935feb         PID:      25584 
+ lic: Using FLEXlm license file: 
+ lic: 27000@IC 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 30-dec-2030/2019.2019 
+ lic: 2(in_use)/99(total) FLOATING license(s) on SERVER 27000@IC 
+ lic:   
+ 
+
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 6         bypass  = 2.0000    
+ **info** dc convergence successful at Newton-Raphson method 
+1****** HSPICE -- N-2017.12-SP2 linux64 (May 24 2018) ******                    
+ ******  
+ *lab3
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:in      = 500.0000m 0:out     = 791.7164m 0:vb      =   1.0200 
+ +0:vdd     =   1.8000 
+
+
+ maximum nodal capacitance=   1.958E-13         on node     0:in              
+
+    nodal  capacitance table 
+
+    node    =    cap      node    =    cap      node    =    cap
+
+ +0:in      = 195.8073f 0:out     =  20.2703f 0:vb      = 190.8707f
+ +0:vdd     =   0.     
+
+ 
+
+ **** voltage sources
+
+ subckt                                   
+ element  0:vin      0:v1       0:v2      
+  volts    500.0000m    1.8000     1.0200 
+  current   10.0828u  -10.0828u    0.     
+  power     -5.0414u   18.1491u    0.     
+
+     total voltage source power dissipation=   13.1077u       watts
+
+
+
+ **** resistors
+
+ subckt             
+ element  0:rd      
+  r value  100.0000k
+  v drop     1.0083 
+  current   10.0828u
+  power     10.1664u
+
+
+
+ **** mosfets
+
+
+ subckt             
+ element  0:mn      
+ model    0:n_18.1  
+ region   Saturation
+  id        10.0828u
+  ibs     -565.3016a
+  ibd     -895.1129a
+  vgs      520.0000m
+  vds      291.7164m
+  vbs     -500.0000m
+  vth      444.3847m
+  vdsat    102.7955m
+  vod       75.6153m
+  beta       2.3060m
+  gam eff  519.9006m
+  gm       161.8261u
+  gds        1.9752u
+  gmb       26.1541u
+  cdtot     20.2703f
+  cgtot    190.8707f
+  cstot    195.8073f
+  cbtot     69.5663f
+  cgs      169.8955f
+  cgd        5.1589f
+
+
+
+
+
+
+
+ ****     small-signal transfer characteristics
+
+      v(out)/vin                               =   15.8620 
+      input resistance at             vin      =    6.3044k
+      output resistance at v(out)              =   83.5060k
+
+
+
+
+          ***** job concluded
+ ******  
+ *lab3
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: 13th Gen Intel(R) Core(TM) i5-13600KF
+ cpu MHz	: 3494.401
+  
+ OS:
+ Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     4
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       7 # elements   =       5
+  # resistors   =       1 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       3
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       1 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           5
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        316.06 megabytes
+           total cpu time            0.00 seconds
+           total elapsed time        0.14 seconds
+           job started at     14:14:17 02/10/2026
+           job ended   at     14:14:17 02/10/2026
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.13(s)

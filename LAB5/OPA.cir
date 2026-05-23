@@ -1,0 +1,16 @@
+.subckt OPA VSS VDD Vip Vin y
+MB x V3 VSS VSS n_18 w=8.6u l=1u m=1
+M1 M1D Vip x VSS n_18 w=4.3u l=1u m=1
+M2 M2D Vin x VSS n_18 w=4.3u l=1u m=1
+M3 M3D V1 M1D VSS n_18 w=4.3u l=1u m=1
+M4 y V1 M2D VSS n_18 w=4.3u l=1u m=1
+M5 M3D V2 M5S VDD p_18 w=4.3u l=1u m=1
+M6 y V2 M6S VDD p_18 w=4.3u l=1u m=1
+M7 M5S M3D VDD VDD p_18 w=4.3u l=1u m=1
+M8 M6S M3D VDD VDD p_18 w=4.3u l=1u m=1
+CL y VSS 2p
+
+V1 V1 VSS 0.85
+V2 V2 VSS 0.7
+V3 V3 VSS 0.5
+.ends

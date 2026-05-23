@@ -1,0 +1,39 @@
+.subckt gm_start_up VB VDD
+M0 VB VGP VDD VDD p_18 w=0.5u l=1u m=1
+M1 VGP VGP VDD VDD p_18 w=0.5u l=1u m=1
+M2 VB VB GND GND n_18 w=2u l=6u m=1
+M3 VGP VB M3S GND n_18 w=8u l=6u m=1
+R1 M3S GND 58k
+
+M4 M4D GND VDD VDD p_18 w=0.25u l=5u m=1
+M5 M5D GND M4D VDD p_18 w=0.25u l=5u m=1
+M6 VGP M5D GND GND n_18 w=0.25u l=1u m=1
+M7 M5D VB GND GND n_18 w=2u l=1u m=1
+.ENDS
+
+.SUBCKT TWO_OP Vip Vin VB out VDD
+MB MBD VB GND GND n_18 w=0.5u l=4u m=1
+M1 M1D Vin MBD GND n_18 w=1.5u l=4u m=1
+M2 M2D Vip MBD GND n_18 w=1.5u l=4u m=1
+M3 M1D M1D VDD VDD p_18 w=4.5u l=4u m=1
+M4 M2D M1D VDD VDD p_18 w=4.5u l=4u m=1
+M5 out M2D VDD VDD p_18 w=9u l=8u m=1
+M6 out VB GND GND n_18 w=0.5u l=8u m=1
+Rc M2D Vc 0.3x
+Cc Vc out 2p
+.ENDS
+
+.SUBCKT bgr VDD VSS Vref
+Q1 VSS VSS E1 VSS PNP_V100X100 m=1
+Q2 VSS VSS E2 VSS PNP_V100X100 m=12
+Q3 VSS VSS E3 VSS PNP_V100X100 m=1
+Xgm VB VDD gm_start_up
+Xop D2 E1 VB VG VDD TWO_OP
+M0 E1 VG VDD VDD p_18 w=40u l=5u m=1
+M1 D2 VG VDD VDD p_18 w=40u l=5u m=1
+M2 Vref VG VDD VDD p_18 w=40u l=5u m=1
+R1 D2 E2 40k
+R2 Vref E3 412k
+.ENDS
+
+

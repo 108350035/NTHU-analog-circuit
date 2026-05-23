@@ -1,0 +1,34 @@
+.SUBCKT TWO_ST VDD Vip Vin Vfb Vop Von
+M1 M4S Vbp VDD VDD p_18 w=8u l=2u m=1
+M2 Vop Vbp VDD VDD p_18 w=4u l=2u m=1
+M3 Von Vbp VDD VDD p_18 w=4u l=2u m=1
+M4 M6D Vip M4S VDD p_18 w=4u l=2u m=1
+M5 M7D Vin M4S VDD p_18 w=4u l=2u m=1
+M6 M6D Vfb GND GND n_18 w=1u l=1u m=1
+M7 M7D Vfb GND GND n_18 w=1u l=1u m=1
+M8 Vop M6D GND GND n_18 w=1u l=1u m=1
+M9 Von M7D GND GND n_18 w=1u l=1u m=1
+CP Vop GND 1p
+CN Von GND 1p
+
+Rcn M7d Vn 400k
+Ccn Vn Von 1p
+Rcp M6d Vp 400k
+Ccp Vp Vop 1p
+Vbp Vbp GND 1.2
+.ends
+
+.SUBCKT CMFB VDD VCM out
+M1 M2S Vb VDD VDD p_18 w=2.8u l=0.25u m=1
+M2 out VCM M2S VDD p_18 w=1.4u l=0.25u m=1
+M3 M5D Vref M2S VDD p_18 w=1.4u l=0.25u m=1
+M4 out M5D GND GND n_18 w=0.35u l=0.25u m=1
+M5 M5D M5D GND GND n_18 w=0.35u l=0.25u m=1
+Vref Vref GND 0.9
+Vb Vb GND 1.2
+.ends
+
+
+
+
+
