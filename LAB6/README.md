@@ -1,2 +1,23 @@
-# NTHU-analog-circuit
-清大類比電路課程 自學
+# 1
+
+2 stage opamp:先不管補償電阻與電容。根據共模輸入範圍要大於1V，我設定Vbp=1.2V。
+再者我設所有W/L=1u/1u (W/L)m1=2u/1u，得Vtn大約為0.45V Vtp1=0.55V。
+根據式子(W/L)p/(W/L)n=Mn/Mp*(Vfb-0.45)^2/(0.6-Vtp1)^2，我想讓Vtp1下降以及讓式子等於2，以及Vfb=V(M7d)=V(M6d)(統一Vovp及Vovn)
+設計Vfb=0.5V，以及定Lp=2u，得到Vtp1等於0.51、Mn/Mp=4、Wp=4u、Wp1=8u，將模擬結果代回公式 符合。
+
+
+CMFB:架構為PMOS電流鏡負載差動放大器，負端接0.9V，正端接感測電路的輸出。
+由於輸出要在0.5V以及增益不須太大，
+定Vbp=1.2V L=0.25u 0.5*Wp=8*Wn=Wpb=2.8u
+
+相位補償:會在op內部產生極點與輸出產生零點，讓PM能提升，使其更穩定。
+要符合三個corner下，我選擇Cc=1p Rc=400k
+
+手算:Aop=gm5*(ro5//ro7)*gm9*(ro3//ro9)=4205
+Acmfb=-gm2*(ro2//ro4)=-22
+Af=-0.0455
+Abreak=-92509
+
+相位補償產生的極點為f=518Hz
+GBW=2.17MHz
+power=15.39uW
