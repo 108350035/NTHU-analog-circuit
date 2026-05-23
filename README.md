@@ -32,4 +32,27 @@ cascode放大器 增益及相位
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB3/3/phase.JPG)
 
+## LAB4
+
+單位增益OPA
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/1/OPA.JPG)
+
+非反相輸入OPA
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/2/OPA.JPG)
+
+反相輸入OPA
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/3/OPA.JPG)
+
+積分器+加法氣
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/schematic.JPG)
+
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/OPA.JPG)
+
+
+
 
