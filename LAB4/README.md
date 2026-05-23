@@ -15,3 +15,8 @@ Ri=10^17k Ro=0。手算Av=30.0679 實際為30.0679
 # 4 
 
 微分方程與拉普拉斯，忘了很久，用GPT解，由於是精確解，週期大概是182.5m，誤差為0.27%
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/formula.JPG)
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB4/4/formula2.JPG)
+
