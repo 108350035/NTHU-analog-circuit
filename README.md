@@ -22,3 +22,14 @@ CG放大器
 CD放大器
 
 ![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB2/3/Vo_Vi.JPG)
+
+## LAB3
+
+cascode放大器 增益及相位
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB3/3/db.JPG)
+
+
+![image](https://github.com/108350035/NTHU-analog-circuit/blob/main/LAB3/3/phase.JPG)
+
+
